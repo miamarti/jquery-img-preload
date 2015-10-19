@@ -28,6 +28,7 @@ $.imgPreload = function(){
     }
 
     for(var key in arguments[0]){
+        (new Image()).src = arguments[0][key][settings.attribute];
         $($("<img />").attr("src", arguments[0][key][settings.attribute])).load(function() {
            loaded++;
         });
