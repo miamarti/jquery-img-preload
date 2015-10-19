@@ -1,0 +1,27 @@
+{
+  "name": "jquery-img-preload",
+  "version": "1.0.0",
+  "main": "dist/img-preload.min.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "build",
+    "speed",
+    "test",
+    "*.md"
+  ],
+  "keywords": [
+    "image",
+    "jquery",
+    "preload",
+    "html5",
+    "cache"
+  ],
+  "authors": [
+    { "name": "Miller Augusto S. Martins", "email": "miller@ciandt.com", "homepage": "http://br.linkedin.com/pub/miller-augusto/2a/38b/832/" }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miamarti/jquery-img-preload.git"
+  }
+}
