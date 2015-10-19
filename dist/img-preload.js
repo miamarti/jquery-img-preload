@@ -1,3 +1,10 @@
+/*!
+ * jQuery-Img-Preload - 16th Out 2015
+ * https://github.com/miamarti/jquery-img-preload
+ *
+ * Licensed under the MIT license.
+ * http://opensource.org/licenses/MIT
+ */
 $.imgPreload = function(){
     var options;
     var planned = 0;
