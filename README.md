@@ -56,6 +56,7 @@ $(document).ready(function() {
 
     $.imgPreload(preloadConf, function(){
         console.log('Preload successfully completed');
+        $('.slide').sprite(config); // See more in https://github.com/miamarti/jquery-sprite-animation
     });
     
 });
