@@ -17,10 +17,10 @@ $.imgPreload = function(config, callback){
         }
 
         if(callback){
-            callback();
             setTimeout(function(){
                 $(div).remove();
                 $(config.loading).fadeOut('slow');
+                callback();
             }, 2000);
         }
 
