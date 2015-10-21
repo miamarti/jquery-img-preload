@@ -39,6 +39,12 @@ $(document).ready(function() {
             '4': {
                 url: 'assets/slides/slide01/Cycle-3.sprite.png'
             }
+        },
+        onPlay: function(){
+        },
+        onPause: function(){
+        },
+        onFrame: function(obj){
         }
     };
 
