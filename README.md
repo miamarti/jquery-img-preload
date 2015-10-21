@@ -23,6 +23,9 @@ $ bower install jquery-img-preload --save
 $(document).ready(function() {
     
     var config = {
+        slide: 1,
+        fps: 12,
+        frames: 17,
         cycles: {
             '1': {
                 url: 'assets/slides/slide01/Cycle-0.sprite.png'
@@ -38,40 +41,14 @@ $(document).ready(function() {
             }
         }
     };
-    
-    $.imgPreload(config.cycles, function(obj){
-        console.log('Preload successfully completed');
-    });
-    
-});
-```
 
-## Settings
-
-### #play
-Starts playing continuous animation that doesn't stop until interrupted by other methods.
-```
-$(document).ready(function() {
-
-    var settings = { attribute: 'img' };
-    var config = {
-        cycles: {
-            '1': {
-                img: 'assets/slides/slide01/Cycle-0.sprite.png'
-            },
-            '2': {
-                img: 'assets/slides/slide01/Cycle-1.sprite.png'
-            },
-            '3': {
-                img: 'assets/slides/slide01/Cycle-2.sprite.png'
-            },
-            '4': {
-                img: 'assets/slides/slide01/Cycle-3.sprite.png'
-            }
-        }
+    var preloadConf = {
+        list: config.cycles,
+        attr: 'url',
+        loading: '.loading'
     };
-    
-    $.imgPreload(config.cycles, config, function(obj){
+
+    $.imgPreload(preloadConf, function(){
         console.log('Preload successfully completed');
     });
     
