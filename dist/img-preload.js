@@ -5,41 +5,29 @@
  * Licensed under the MIT license.
  * http://opensource.org/licenses/MIT
  */
-$.imgPreload = function(){
-    var options;
-    var planned = 0;
-    var loaded = 0;
-    var callback = new Function();
+$.imgPreload = function(config, callback){
+    if(config){
+        $(config.loading).fadeIn('slow');
 
-    if(typeof arguments[1] === 'function'){
-        callback = arguments[1];
-        options = arguments[2];
-    } else {
-        options = arguments[1];
-    }
+        var div = $('<div/>');
+        $('body').append(div);
 
-    var defaults = {
-        attribute: 'url'
-    };
-    var settings = $.extend({}, defaults, options);
-
-    for(var key in arguments[0]){
-        planned++;
-    }
-
-    for(var key in arguments[0]){
-        (new Image()).src = arguments[0][key][settings.attribute];
-        $($("<img />").attr("src", arguments[0][key][settings.attribute])).load(function() {
-           loaded++;
-        });
-    }
-
-    var watchdog = function(){
-        if(planned === loaded){
-            callback();
-        } else {
-            setTimeout(watchdog, 10);
+        for(var key in config.list){
+            $(div).append($('<img/>').attr('src', config.list[key][config.attr]));
         }
-    };
-    watchdog();
+
+        if(callback){
+            callback();
+            setTimeout(function(){
+                $(div).remove();
+                $(config.loading).fadeOut('slow');
+            }, 2000);
+        }
+
+        return {
+            clear: function(){
+                $(div).remove();
+            }
+        };
+    }
 };
